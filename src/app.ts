@@ -12,7 +12,7 @@ app.get("/", (req,res) =>{
 app.post("/ahmedmohsen", uploads.array('audio', 3), async (req: Request, res: Response) => {
     try {
         const file = await ahmedMohsenHandler(req.files as Express.Multer.File[]);
-        res.sendFile(file)
+        res.download(file)
     } catch (e: unknown) {
         if (e instanceof Error)
             console.error(e, e.stack)
