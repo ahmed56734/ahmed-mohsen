@@ -5,6 +5,9 @@ import {ahmedMohsenHandler} from "./files-sevice";
 const uploads = multer({dest: `./assets/temp`})
 const app = createApplication();
 
+app.get("/", (req,res) =>{
+	res.send('test');
+})
 
 app.post("/ahmedmohsen", uploads.array('audio', 3), async (req: Request, res: Response) => {
     try {
@@ -20,5 +23,5 @@ app.post("/ahmedmohsen", uploads.array('audio', 3), async (req: Request, res: Re
 })
 
 app.listen(3000, () => {
-    console.log(`app started on http://localhost:3000`)
+    console.log(`started app on http://localhost:3000`)
 });

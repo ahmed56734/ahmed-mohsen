@@ -17,8 +17,6 @@ const concatenateAudioFiles = async (userFiles: string[]) => {
     let ahmedMohsenFiles = await fs.readdir(path.resolve('./assets/original-ahmed-mohsen'))
     ahmedMohsenFiles = ahmedMohsenFiles.map((n) => path.resolve(path.join('./assets/original-ahmed-mohsen', n)))
 
-    console.log(ahmedMohsenFiles)
-
     let audioFiles: string[];
     if (userFiles.length === 3) {
         audioFiles = [
